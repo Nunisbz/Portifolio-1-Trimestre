@@ -1,0 +1,114 @@
+Atividade 1: "Conversão de Temperaturas"
+
+Baseado no arquivo HTML no class, o professor pediu para os alunos criarem um algoritmo que realize todas as conversões de temperatura presentes nos inputs do tipo 'radio'.
+
+Solução para a atividade: 
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+    <style>
+        /* Cole o código CSS minimalista aqui */
+    </style>
+</head>
+
+
+<body>
+    <div class="geral">
+        <h1>Conversor de Temperatura</h1>
+        <input id="temp" type="number" placeholder="Digite a temperatura"><br>
+        <div class="radios">
+            <input id="cf" name="tipo" type="radio">Celsius para Fahrenheit<br>
+            <input id="ck" name="tipo" type="radio">Celsius para Kelvin<br>
+            <input id="fc" name="tipo" type="radio">Fahrenheit para Celsius<br>
+            <input id="fk" name="tipo" type="radio">Fahrenheit para Kelvin<br>
+            <input id="kc" name="tipo" type="radio">Kelvin para Celsius<br>
+            <input id="kf" name="tipo" type="radio">Kelvin para Fahrenheit<br>
+        </div>
+        <button onclick="converte()" type="button">Converter</button><br>
+        <p id="resultado">Resultado: </p>
+    </div>
+    <script>
+        function converte() {
+            var temp = parseFloat(document.getElementById("temp").value);
+            var cf = document.getElementById("cf").checked;
+            var ck = document.getElementById("ck").checked;
+            var fc = document.getElementById("fc").checked;
+            var fk = document.getElementById("fk").checked;
+            var kc = document.getElementById("kc").checked;
+            var kf = document.getElementById("kf").checked;
+
+
+            var resultado;
+
+
+            if (cf) {
+                resultado = (temp * 9/5) + 32;
+                resultado = resultado.toFixed(2) + " °F";
+            } else if (ck) {
+                resultado = temp + 273.15;
+                resultado = resultado.toFixed(2) + " K";
+            } else if (fc) {
+                resultado = (temp - 32) * 5/9;
+                resultado = resultado.toFixed(2) + " °C";
+            } else if (fk) {
+                resultado = ((temp - 32) * 5/9) + 273.15;
+                resultado = resultado.toFixed(2) + " K";
+            } else if (kc) {
+                resultado = temp - 273.15;
+                resultado = resultado.toFixed(2) + " °C";
+            } else if (kf) {
+                resultado = (temp - 273.15) * 9/5 + 32;
+                resultado = resultado.toFixed(2) + " °F";
+            } else {
+                resultado = "Selecione uma opção de conversão.";
+            }
+
+
+            document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+        }
+    </script>
+</body>
+
+
+</html>
+
+
+
+Atividade 2: "Atividade javascript"
+
+Nessa atividade o professor pediu para passar para javascript o algoritmo da atividade do dia 17/03
+(Nome, idade, maior/menor de idade)
+
+Solução para a atividade: 
+
+function inicio(){
+    let nome;
+    let ano_nascimento;
+    let idade;
+    
+    nome = prompt("Digite seu nome: ");
+    console.log("Bem vindo, " + nome + "!");
+    
+    ano_nascimento = parseInt(prompt("Digite o ano do seu nascimento: "));
+    
+    idade = 2023 - ano_nascimento;
+    
+    if(idade >= 18){
+        console.log("Parabéns, você tem mais de 18 anos!");
+    }
+    else{
+        console.log("Infelizmente você não pode entrar por ser menor de 18 anos.");
+    }
+    
+    console.log("Sua idade é: " + idade);
+}
+
+inicio();
+
