@@ -1,0 +1,117 @@
+Autoral 1: "Conversão de KM para milhas e vice-versa"
+
+Crie um código em "HTML" no qual converta a quantidade de KM colocados em um espaço para texto e converta esses KM para milhas. Faça o código fazer isso em vice-versa
+
+Solução:
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de KM para Milhas</title>
+</head>
+<body>
+  <h1>Conversor de KM para Milhas</h1>
+  
+  <label for="inputValue">Valor:</label>
+  <input type="number" id="inputValue" placeholder="Digite o valor" oninput="updateResult()" />
+  
+  <label for="unit">Unidade:</label>
+  <select id="unit" onchange="updateResult()">
+    <option value="km">Quilômetros</option>
+    <option value="miles">Milhas</option>
+  </select>
+  
+  <h2>Resultado:</h2>
+  <p id="result">Digite um valor para converter</p>
+
+  <script>
+    function kmToMiles(km) {
+      return km * 0.621371;
+    }
+
+    function milesToKm(miles) {
+      return miles * 1.60934;
+    }
+
+    function updateResult() {
+      const inputValue = parseFloat(document.getElementById('inputValue').value);
+      const unit = document.getElementById('unit').value;
+      let resultText = '';
+
+      if (isNaN(inputValue)) {
+        resultText = 'Digite um valor para converter';
+      } else {
+        let convertedValue;
+
+        if (unit === 'km') {
+          convertedValue = kmToMiles(inputValue);
+          resultText = `${inputValue} KM é igual a ${convertedValue.toFixed(2)} milhas`;
+        } else {
+          convertedValue = milesToKm(inputValue);
+          resultText = `${inputValue} milhas é igual a ${convertedValue.toFixed(2)} KM`;
+        }
+      }
+
+      document.getElementById('result').innerText = resultText;
+    }
+  </script>
+</body>
+</html>
+
+
+Autoral 2: "Calculadora de Dias de Vida e Verificador de Maioridade"
+
+Crie um código em "HTML" no qual quando eu digite a minha data de nascimento o sistema diz quantos dias de vida eu tenho e se eu sou maior ou menor de idade. 
+
+Solução: 
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Dias de Vida e Verificador de Maioridade</title>
+</head>
+<body>
+  <h1>Calculadora de Dias de Vida e Verificador de Maioridade</h1>
+  
+  <label for="birthdate">Data de Nascimento:</label>
+  <input type="date" id="birthdate" onchange="updateResult()" />
+  
+  <h2>Resultado:</h2>
+  <p id="result">Selecione sua data de nascimento</p>
+
+  <script>
+    function calculateAgeInDays(birthDate) {
+      const now = new Date();
+      const ageInMilliseconds = now - birthDate;
+      const ageInDays = ageInMilliseconds / (1000 * 60 * 60 * 24);
+      return ageInDays;
+    }
+
+    function isAdult(birthDate) {
+      const ageInDays = calculateAgeInDays(birthDate);
+      const daysIn18Years = 18 * 365.25; // Considerando anos bissextos
+      return ageInDays >= daysIn18Years;
+    }
+
+    function updateResult() {
+      const birthDateInput = document.getElementById('birthdate').value;
+
+      if (birthDateInput) {
+        const birthDate = new Date(birthDateInput);
+        const ageInDays = calculateAgeInDays(birthDate);
+        const adultStatus = isAdult(birthDate) ? 'maior' : 'menor';
+
+        document.getElementById('result').innerHTML = `
+          Você tem ${ageInDays.toFixed(0)} dias de vida e é ${adultStatus} de idade.
+        `;
+      } else {
+        document.getElementById('result').innerText = 'Selecione sua data de nascimento';
+      }
+    }
+  </script>
+</body>
+</html>
