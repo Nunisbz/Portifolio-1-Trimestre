@@ -1,5 +1,5 @@
 # Olá 👋, meu nome é <b>_Arthur Nunis_</b>
-### Ter a oportunidade de aprender e utilizar técnicas fundamentais para comunicação e produção efetiva dentro do mercado de trabalho. Pretendo ser o destaque em minha área de produção e criar novas técnicas para utilizar dentro do mercado, e assim adquirir cada vez mais experiências para ser o melhor funcionário na área.
+### Meu objetivo é ter a oportunidade de aprender e utilizar técnicas fundamentais para comunicação e produção efetiva dentro do mercado de trabalho. Pretendo ser o destaque em minha área de produção e criar novas técnicas para utilizar dentro do mercado, e assim adquirir cada vez mais experiências para ser o melhor funcionário na área.
 
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=nunisbz&label=Profile%20views&color=0e75b6&style=flat" alt="ArthurNunis" />
